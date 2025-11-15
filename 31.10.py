@@ -63,17 +63,13 @@ else:
 print("\n\t\tV")
 
 m = float(input("Введіть грошову суму (грн): "))
-discount = "0%"
+discount = 0
 final_sum = 0
 if m > 1000:  # 1100 / 825
-    discount = "25%"
-    final_sum = m - (m / 4)
+    discount = 25
 elif m > 500:  # 510 / 459
-    discount = "10%"
-    final_sum = m - (m / 10)
+    discount = 10
 elif m > 100:  # 110 / 104.5
-    discount = "5%"
-    final_sum = m - (m / 100 * 5)
-else:
-    final_sum = m
-print(f"Якщо покупець заплатить {m}, то отримає знижку {discount}, тож фінальна сума: {final_sum}")
+    discount = 5
+final_sum = m - (m / 100 * discount)
+print(f"Якщо покупець заплатить {m}, то отримає знижку {discount}%, тож фінальна сума: {final_sum}")

@@ -111,10 +111,11 @@ N = int(input("N = "))
 i = 1
 s = 0
 while i <= N:
-    s += i
+    if i % 2 == 0:
+        s -= i
+        print(i, end=" + ")
+    else:
+        s += i
+        print(i, end=" - ")
     i += 1
-    print(s, end=' + ')
-    s -= i
-    i += 1
-    print(s, end=' - ')
 print(f"\n= {s}")
